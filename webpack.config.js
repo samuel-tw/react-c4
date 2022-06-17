@@ -2,6 +2,15 @@ const path = require('path');
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
 
 module.exports = {
+    // target: 'node',
+    resolve:{
+        fallback: { "crypto": require.resolve("crypto-browserify"),
+                  "path": require.resolve("path-browserify") ,
+                   "stream": false ,
+
+        },
+
+    },
     entry: './src/index.jsx',
     output:{
         filename: 'bundle.js',
